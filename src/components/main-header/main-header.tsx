@@ -5,7 +5,11 @@ import { Container } from "./main-header.styles";
 interface MainHeaderType {}
 
 const MainHeader: React.FC<MainHeaderType> = (p) => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <div />
+    </Container>
+  );
 };
 
 export default MainHeader;
