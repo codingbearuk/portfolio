@@ -10,6 +10,8 @@ export default {
     blue: "#0099ff",
     darkblue: "#00072e",
     orange: "#FF9429",
+    blueGradient:
+      "linear-gradient(56deg, rgba(0,44,132,1) 0%, rgba(0,44,132,1) 29%, rgba(0,215,255,1) 100%)",
   },
   opacity: {
     0: 0,
