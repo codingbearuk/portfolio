@@ -38,7 +38,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     "gatsby-plugin-react-helmet",
-    'gatsby-plugin-root-import'
+    'gatsby-plugin-root-import',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Lato\:100,400,700`,
+        ],
+        display: 'swap'
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
