@@ -1,4 +1,4 @@
-export default {
+const theme = {
   screens: {
     // max-widths in pixels
     sm: 640,
@@ -6,12 +6,13 @@ export default {
     lg: 1024,
     xl: 1280,
   },
+  breakpoints: [640, 768, 1024, 1280],
   colors: {
-    blue: "#0099ff",
-    darkblue: "#00072e",
-    orange: "#FF9429",
-    blueGradient:
-      "linear-gradient(56deg, rgba(0,44,132,1) 0%, rgba(0,44,132,1) 29%, rgba(0,215,255,1) 100%)",
+    blue: "#00D7FF",
+    darkblue: "#002C84",
+    grey: "#ADC3EA",
+    white: "#F2F2F2",
+    black: "#232323",
   },
   opacity: {
     0: 0,
@@ -24,3 +25,7 @@ export default {
     `padding-top: ${value}; padding-bottom: ${value};`,
   // Add anything else you'd like.
 };
+
+export type Theme = typeof theme;
+
+export default theme;
