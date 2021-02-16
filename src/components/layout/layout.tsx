@@ -2,7 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "../../styles";
 // Components
-import { CSSDebugger } from "../css-debugger";
+import TopNav from "../top-nav";
 
 const Container = styled.main`
   margin: 0;
@@ -15,6 +15,7 @@ const Layout: React.FC = ({ children }) => {
       <Container>
         <GlobalStyles />
         {/* <CSSDebugger /> */}
+        <TopNav />
         {children}
       </Container>
     </ThemeProvider>

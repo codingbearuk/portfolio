@@ -1,16 +1,16 @@
-const siteTitle = "gatsby-starter-typescript-deluxe";
+const siteTitle = "Kamil Pieczyk Portfolio";
 const siteDescription =
-  "A Gatsby starter with TypeScript, Storybook, Styled Components, Framer Motion, Jest, and more.";
-const siteAuthor = "@gojutin";
-const siteUrl = "https://gatsby-starter-typescript-deluxe.netlify.com";
+"This is Kamil Pieczyks portfolio website. Kamil Pieczyk is the java-script full stack developer.";
+const siteUrl = "https://kamilpieczyk.github.io/";
 const siteImage = `${siteUrl}/icons/icon_512x512.png`;
-const siteKeywords = ["gatsby", "typescript", "starter", "javascript", "react"];
+const siteKeywords =
+  ["portfolio", "typescript", "javascript", "webdeveloper", "react", "web", "development", "next.js", "electron"];
 
 module.exports = {
   siteMetadata: {
     title: siteTitle,
     description: siteDescription,
-    author: siteAuthor,
+    author: "Kamil Pieczyk",
     url: siteUrl,
     keywords: siteKeywords,
     image: siteImage,
@@ -38,6 +38,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     "gatsby-plugin-react-helmet",
+    'gatsby-plugin-root-import'
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -45,8 +46,8 @@ module.exports = {
         short_name: siteTitle,
         description: siteDescription,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F2F2F2`,
+        theme_color: `#00D7FF`,
         display: `minimal-ui`,
         icon: "src/images/icon.png",
         icons: [
