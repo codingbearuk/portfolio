@@ -6,6 +6,7 @@ export const Container = styled.nav`
   padding: 20px 10%;
   display: grid;
   grid-template-columns: 10% 90%;
+  z-index: 10000000;
 `;
 
 export const Logo = styled.img`
