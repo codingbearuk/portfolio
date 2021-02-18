@@ -5,5 +5,4 @@ import reducers from "./reducers";
 
 const store = createStore(reducers, composeWithDevTools());
 
-export type Store = typeof store;
 export default store;
