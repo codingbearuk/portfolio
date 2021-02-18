@@ -24,6 +24,8 @@
     "update": "ncu -u"
   },
   "dependencies": {
+    "@types/react-redux": "^7.1.16",
+    "@types/redux-devtools-extension": "^2.13.2",
     "@types/sleep": "^0.0.8",
     "framer-motion": "^2.9.4",
     "gatsby": "^2.25.3",
@@ -46,6 +48,7 @@
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "sleep-promise": "^9.1.0",
     "styled-components": "^5.2.1",
     "use-media": "^1.4.0"
