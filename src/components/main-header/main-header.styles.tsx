@@ -14,6 +14,13 @@ export const Container = styled.header`
     right: 0;
     width: 950px;
     height: 800px;
+    @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
+      width: 400px;
+      height: 343px;
+      right: -20px;
+      bottom: 20px;
+      overflow: hidden;
+    }
   }
 
   h1 {
@@ -35,6 +42,14 @@ export const Container = styled.header`
         padding-left: 5px;
       }
     }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
+      font-size: 2em;
+      top: 85px;
+      :nth-child(3) {
+        top: 135px;
+      }
+    }
   }
 
   h2 {
@@ -48,6 +63,9 @@ export const Container = styled.header`
     div {
       font-weight: 700;
       font-size: 1.5em;
+    }
+    @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
+      top: 200px;
     }
   }
 
