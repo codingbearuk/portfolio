@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "../../../store/store";
 // Components
 import TopNav from "../top-nav";
+import MobileMenu from "../mobile-menu";
 // actions
 import screen from "../../../store/actions/screen.actions";
 
@@ -39,6 +40,7 @@ const Layout: React.FC = ({ children }) => {
           <GlobalStyles />
           {/* <CSSDebugger /> */}
           <TopNav />
+          <MobileMenu />
           {children}
         </Container>
       </ThemeProvider>

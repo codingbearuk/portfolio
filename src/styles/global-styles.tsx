@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     color: white;
     width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
   html {
     font-family: 'Lato', sans-serif;

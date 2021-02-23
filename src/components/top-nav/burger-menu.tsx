@@ -52,7 +52,6 @@ const BurgerMenu: React.FC = (p) => {
       yoyo: false,
     });
     if (mobileMenuState) {
-      dispatch(mobileMenuSwitch("off"));
       tl.to(
         bottom.current,
         {
@@ -81,7 +80,11 @@ const BurgerMenu: React.FC = (p) => {
           opacity: 1,
           width: "70%",
           duration: 0.3,
-        });
+        })
+        .to(middle.current, {
+          duration: 0.5,
+        })
+        .then(() => dispatch(mobileMenuSwitch("off")));
     } else {
       tl.to(middle.current, {
         width: "1px",
