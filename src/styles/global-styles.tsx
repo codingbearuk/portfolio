@@ -6,6 +6,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     /* background: ${(props) => props.theme.colors.darkblue}; */
     color: white;
+    width: 100vw;
+    overflow-x: hidden;
   }
   html {
     font-family: 'Lato', sans-serif;
