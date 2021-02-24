@@ -10,7 +10,8 @@ const theme = {
   colors: {
     blue: "#00D7FF",
     darkblue: "#002C84",
-    grey: "#ADC3EA",
+    grey: "#D4D4D4",
+    lightgrey: "#ECECEC",
     white: "#F2F2F2",
     black: "#232323",
     transparent: "rgba(35, 35, 35, 0.4)",

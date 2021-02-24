@@ -5,6 +5,7 @@ import { Layout } from "../components/layout";
 import MainHeader from "../components/main-header";
 import WhoIAm from "../components/who-i-am";
 import MySkills from "../components/my-skills";
+import Separatorbar from "../components/separator-bar";
 
 const App = () => (
   <Layout>
@@ -17,6 +18,7 @@ const App = () => (
     </Helmet>
     <MainHeader />
     <WhoIAm />
+    <Separatorbar />
     <MySkills />
   </Layout>
 );
