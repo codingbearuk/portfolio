@@ -8,6 +8,7 @@ import store from "../../../store/store";
 import TopNav from "../top-nav";
 import MobileMenu from "../mobile-menu";
 import RocketJump from "../rocket-jump";
+import Footer from "../footer";
 // actions
 import screen from "../../../store/actions/screen.actions";
 
@@ -63,6 +64,7 @@ const Layout: React.FC = ({ children }) => {
           <MobileMenu />
           <RocketJump />
           {children}
+          <Footer />
         </Container>
       </ThemeProvider>
     </Provider>

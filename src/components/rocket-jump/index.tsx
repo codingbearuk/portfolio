@@ -7,7 +7,8 @@ const Container = styled.div`
   position: fixed;
   bottom: 5%;
   right: 2%;
-  background: ${({ theme }) => theme.colors.blue};
+  background: ${({ theme }) => theme.colors.transparentDarkblue};
+  backdrop-filter: blur(8px);
   border-radius: 50%;
   width: 70px;
   height: 70px;

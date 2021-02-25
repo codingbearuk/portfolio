@@ -9,6 +9,7 @@ const theme = {
   breakpoints: [640, 768, 1024, 1280],
   colors: {
     blue: "#00D7FF",
+    lightblue: "#75eaff",
     darkblue: "#002C84",
     grey: "#D4D4D4",
     lightgrey: "#ECECEC",
