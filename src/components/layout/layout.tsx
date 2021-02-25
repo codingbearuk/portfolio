@@ -7,6 +7,7 @@ import store from "../../../store/store";
 // Components
 import TopNav from "../top-nav";
 import MobileMenu from "../mobile-menu";
+import RocketJump from "../rocket-jump";
 // actions
 import screen from "../../../store/actions/screen.actions";
 
@@ -60,6 +61,7 @@ const Layout: React.FC = ({ children }) => {
           {/* <CSSDebugger /> */}
           <TopNav />
           <MobileMenu />
+          <RocketJump />
           {children}
         </Container>
       </ThemeProvider>
