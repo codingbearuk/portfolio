@@ -24,6 +24,21 @@ const Layout: React.FC = ({ children }) => {
     }
   }, []);
 
+  const handleScrollValue = useCallback(() => {
+    let scrollValue: number = window.scrollY;
+    store.dispatch(screen("set-scroll-value", scrollValue));
+    scrollValue >= 400
+      ? store.dispatch(screen("set-page-scrolled", true))
+      : store.dispatch(screen("set-page-scrolled", false));
+    window.addEventListener("scroll", function () {
+      scrollValue = window.scrollY;
+      scrollValue >= 400
+        ? store.dispatch(screen("set-page-scrolled", true))
+        : store.dispatch(screen("set-page-scrolled", false));
+      store.dispatch(screen("set-scroll-value", scrollValue));
+    });
+  }, []);
+
   useEffect(() => {
     let screenWidth: number = window.innerWidth;
     handleDeviceResolution(screenWidth);
@@ -31,6 +46,10 @@ const Layout: React.FC = ({ children }) => {
       screenWidth = window.innerWidth;
       handleDeviceResolution(screenWidth);
     });
+  }, []);
+
+  useEffect(() => {
+    handleScrollValue();
   }, []);
 
   return (
