@@ -1,7 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.nav`
-  position: absolute;
+interface ContainerType {
+  isPageScrolled: boolean;
+  isDesktop: boolean;
+}
+export const Container = styled.nav<ContainerType>`
+  position: ${({ isDesktop, isPageScrolled }) =>
+    isDesktop && isPageScrolled ? "fixed" : "absolute"};
+  background: ${({ isDesktop, isPageScrolled, theme }) =>
+    isDesktop && isPageScrolled ? theme.colors.transparentDarkblue : null};
+  backdrop-filter: ${({ isDesktop, isPageScrolled }) =>
+    isDesktop && isPageScrolled ? "blur(8px)" : null};
   width: 100%;
   padding: 20px 10%;
   display: grid;

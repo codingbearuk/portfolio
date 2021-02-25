@@ -15,6 +15,7 @@ const theme = {
     white: "#F2F2F2",
     black: "#232323",
     transparent: "rgba(35, 35, 35, 0.4)",
+    transparentDarkblue: "rgba(0, 44, 132, 0.4)",
   },
   opacity: {
     0: 0,

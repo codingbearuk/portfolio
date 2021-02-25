@@ -11,8 +11,9 @@ const Nav: React.FC<NavType> = (p) => {
   const device: "mobile" | "desktop" = useSelector(
     (s: State) => s.screen.device
   );
+  const isPageScrolled: boolean = useSelector((s: State) => s.screen.scrolled);
 
-  return View({ menu, state: { device } });
+  return View({ menu, state: { device, isPageScrolled } });
 };
 
 export default Nav;

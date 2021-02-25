@@ -6,13 +6,16 @@ import { MenuEl } from "./menu";
 import BurgerMenu from "./burger-menu";
 
 interface NavType {
-  state: { device: "mobile" | "desktop" };
+  state: { device: "mobile" | "desktop"; isPageScrolled: boolean };
   menu: MenuEl[];
 }
 
 const Nav: React.FC<NavType> = (p) => {
   return (
-    <Container>
+    <Container
+      isDesktop={p.state.device === "desktop"}
+      isPageScrolled={p.state.isPageScrolled}
+    >
       <Logo src="images/logo.png" alt="kamilpieczyk logo" />
       <Menu>
         {p.state.device === "desktop" ? (
