@@ -8,13 +8,15 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 20px;
-  padding: 10px 20px;
+  padding: 20px 30px;
   padding-bottom: 90px;
   border: 1px dotted ${({ theme }) => theme.colors.blue};
   border-radius: 5px;
 
   img {
     width: 80%;
+    max-width: 170px;
+    max-height: 110px;
   }
 
   h2 {

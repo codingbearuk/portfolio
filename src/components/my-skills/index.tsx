@@ -16,14 +16,14 @@ const MySkills: React.FC = (p) => {
       level: 100,
     },
     {
-      title: "java-script",
+      title: "Java-Script",
       imagePath: "/images/undraw_static_assets_rpm6.svg",
       level: 98,
     },
     {
-      title: "type-script",
+      title: "Type-Script",
       imagePath: "/images/undraw_Typing_re_d4sq.svg",
-      level: 55,
+      level: 60,
     },
     {
       title: "React Framework",
@@ -33,12 +33,12 @@ const MySkills: React.FC = (p) => {
     {
       title: "React Redux",
       imagePath: "/images/undraw_cloud_files_wmo8.svg",
-      level: 80,
+      level: 85,
     },
     {
       title: "React Router",
       imagePath: "/images/undraw_On_the_way_re_swjt.svg",
-      level: 80,
+      level: 99,
     },
     {
       title: "Next Framework",
@@ -69,6 +69,26 @@ const MySkills: React.FC = (p) => {
       title: "Deployment",
       imagePath: "/images/undraw_cloud_hosting_aodd.svg",
       level: 60,
+    },
+    {
+      title: "Git",
+      imagePath: "/images/undraw_version_control_9bpv.svg",
+      level: 60,
+    },
+    {
+      title: "Illustrator",
+      imagePath: "/images/undraw_interior_design_9i70.svg",
+      level: 75,
+    },
+    {
+      title: "Photoshop",
+      imagePath: "/images/undraw_Designer_girl_s028.svg",
+      level: 75,
+    },
+    {
+      title: "Adobe XD",
+      imagePath: "/images/undraw_Design_sprint_re_tke3.svg",
+      level: 70,
     },
   ];
 
