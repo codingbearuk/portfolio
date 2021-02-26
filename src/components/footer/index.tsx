@@ -47,7 +47,7 @@ const Container = styled.footer`
 
 const Footer: React.FC = (p) => {
   return (
-    <Container>
+    <Container id="footer">
       <div>
         <Link to="https://github.com/kamilpieczyk/portfolio">
           <FaGithub />

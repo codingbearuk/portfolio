@@ -4,7 +4,7 @@ import { Container, Title, Text } from "./who-i-am.styles";
 
 const View: React.FC = (p) => {
   return (
-    <Container>
+    <Container id="who-i-am">
       <Title>Who I am? 👱🏻‍♂️</Title>
       <Text>
         Let me introduce myself - my name is Kamil and I'm full stack web

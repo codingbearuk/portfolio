@@ -1,4 +1,4 @@
-import Reducer from "./reducer";
+import Action from "../actions/action";
 
 const initialState = {
   device: "mobile",
@@ -8,7 +8,7 @@ const initialState = {
 
 type State = typeof initialState;
 
-const screen: Reducer = (state = initialState, action): State => {
+const screen = (state = initialState, action: Action): State => {
   switch (action.type) {
     case "set-device-type":
       const type: string = action.payload;

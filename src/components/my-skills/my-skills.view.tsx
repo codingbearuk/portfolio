@@ -11,7 +11,7 @@ interface ViewType {
 
 const View: React.FC<ViewType> = (p) => {
   return (
-    <Container>
+    <Container id="my-skills">
       <Title>My skills 👩🏻‍💻</Title>
       <SkillsContainer>
         {p.skills.map((skill) => (

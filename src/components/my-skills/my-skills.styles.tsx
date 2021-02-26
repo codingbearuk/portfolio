@@ -7,6 +7,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 100vw;
+  opacity: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
     padding: 30px 5%;
   }

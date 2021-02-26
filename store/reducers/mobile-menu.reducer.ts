@@ -1,8 +1,8 @@
-import Reducer from "./reducer";
+import Action from "../actions/action";
 
 const initialState: boolean = false;
 
-const mobileMenu: Reducer = (state = initialState, action) => {
+const mobileMenu = (state = initialState, action: Action) => {
   switch (action.type) {
     case "switch-mobile-menu":
       const switcher: boolean = action.payload;
