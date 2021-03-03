@@ -17,7 +17,7 @@ const Container = styled.main`
   max-width: 1080px;
 `;
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ subpage?: boolean }> = ({ children, subpage }) => {
   const handleDeviceResolution = useCallback((screenWidth: number) => {
     if (screenWidth > 678) {
       store.dispatch(screen("set-device-type", "desktop"));
@@ -60,7 +60,7 @@ const Layout: React.FC = ({ children }) => {
         <Container>
           <GlobalStyles />
           {/* <CSSDebugger /> */}
-          <TopNav />
+          <TopNav subpage={subpage} />
           <MobileMenu />
           <RocketJump />
           {children}

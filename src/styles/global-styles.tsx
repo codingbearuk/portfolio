@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
-  html {
+  html, button, input, textarea {
     font-family: 'Lato', sans-serif;
   }
   *,*::before, *::after {

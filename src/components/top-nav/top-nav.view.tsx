@@ -6,7 +6,11 @@ import { MenuEl } from "./menu";
 import BurgerMenu from "./burger-menu";
 
 interface NavType {
-  state: { device: "mobile" | "desktop"; isPageScrolled: boolean };
+  state: {
+    device: "mobile" | "desktop";
+    isPageScrolled: boolean;
+    subpage?: boolean;
+  };
   menu: MenuEl[];
 }
 
@@ -15,6 +19,7 @@ const Nav: React.FC<NavType> = (p) => {
     <Container
       isDesktop={p.state.device === "desktop"}
       isPageScrolled={p.state.isPageScrolled}
+      isSubpage={p.state.subpage}
     >
       <Logo src="images/logo.png" alt="kamilpieczyk logo" />
       <Menu>

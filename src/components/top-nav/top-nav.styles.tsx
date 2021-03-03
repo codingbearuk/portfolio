@@ -1,14 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface ContainerType {
   isPageScrolled: boolean;
   isDesktop: boolean;
+  isSubpage?: boolean;
 }
 export const Container = styled.nav<ContainerType>`
   position: ${({ isDesktop, isPageScrolled }) =>
     isDesktop && isPageScrolled ? "fixed" : "absolute"};
-  background: ${({ isDesktop, isPageScrolled, theme }) =>
-    isDesktop && isPageScrolled ? theme.colors.transparentDarkblue : null};
+  background: ${({ isDesktop, isPageScrolled, theme, isSubpage }) =>
+    isDesktop && isPageScrolled
+      ? theme.colors.transparentDarkblue
+      : isSubpage
+      ? theme.colors.darkblue
+      : null};
   backdrop-filter: ${({ isDesktop, isPageScrolled }) =>
     isDesktop && isPageScrolled ? "blur(8px)" : null};
   width: 100%;

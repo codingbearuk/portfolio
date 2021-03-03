@@ -5,7 +5,9 @@ import menu from "./menu";
 import View from "./top-nav.view";
 import { State } from "../../../store/reducers";
 
-interface NavType {}
+interface NavType {
+  subpage?: boolean;
+}
 
 const Nav: React.FC<NavType> = (p) => {
   const device: "mobile" | "desktop" = useSelector(
@@ -13,7 +15,7 @@ const Nav: React.FC<NavType> = (p) => {
   );
   const isPageScrolled: boolean = useSelector((s: State) => s.screen.scrolled);
 
-  return View({ menu, state: { device, isPageScrolled } });
+  return View({ menu, state: { device, isPageScrolled, subpage: p.subpage } });
 };
 
 export default Nav;

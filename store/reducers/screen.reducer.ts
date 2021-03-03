@@ -1,17 +1,20 @@
 import Action from "../actions/action";
 
-const initialState = {
+interface State {
+  device: "mobile" | "desktop";
+  scrolled: boolean;
+  scrollValue: number;
+}
+const initialState: State = {
   device: "mobile",
   scrolled: false,
   scrollValue: 0,
 };
 
-type State = typeof initialState;
-
 const screen = (state = initialState, action: Action): State => {
   switch (action.type) {
     case "set-device-type":
-      const type: string = action.payload;
+      const type: "mobile" | "desktop" = action.payload;
       state = { ...state, device: type };
       return state;
     case "set-scroll-value":

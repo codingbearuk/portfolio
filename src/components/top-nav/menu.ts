@@ -16,7 +16,7 @@ export default [
   { title: "about", icon: FaHome, link: "/" },
   { title: "projects", icon: FaProjectDiagram, link: "/projects" },
   { title: "blog", icon: FaRss, link: "/blog" },
-  { title: "contacts", icon: FaIdCardAlt, link: "/contacts" },
+  { title: "contact", icon: FaIdCardAlt, link: "/contact" },
   {
     title: "github",
     icon: FaGithub,
