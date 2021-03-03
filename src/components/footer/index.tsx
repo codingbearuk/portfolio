@@ -42,6 +42,10 @@ const Container = styled.footer`
     font-size: 1em;
     font-weight: 100;
     padding: 5px;
+    @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
+      text-align: center;
+      font-size: 0.9em;
+    }
   }
 `;
 
