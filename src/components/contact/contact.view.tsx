@@ -1,5 +1,5 @@
-import React from "react";
-import { FaAt, FaPhone, FaPaperPlane } from "react-icons/all";
+import React, { SyntheticEvent } from "react";
+import { FaAt, FaMobile, FaPaperPlane } from "react-icons/all";
 
 import {
   Container,
@@ -15,7 +15,7 @@ import { InputType } from "./";
 interface ContactType {
   inputs: InputType[];
   isLoading: boolean;
-  handleButton: (e: Event) => void;
+  handleButton: (e: SyntheticEvent) => void;
 }
 
 const Contact: React.FC<ContactType> = (p) => {
@@ -64,7 +64,7 @@ const Contact: React.FC<ContactType> = (p) => {
               <FaAt /> kamil.pieczyk@gmail.com
             </div>
             <div>
-              <FaPhone /> +44 7593706457
+              <FaMobile /> +44 7593706457
             </div>
           </DetaildContainer>
         </section>

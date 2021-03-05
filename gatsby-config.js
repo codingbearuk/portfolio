@@ -24,6 +24,17 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: 'http://51.89.139.235:1337',
+        contentTypes: [
+          'projects',
+          'posts'
+        ],
+        queryLimit: 1000,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-axe",
       options: {
         showInProduction: false,

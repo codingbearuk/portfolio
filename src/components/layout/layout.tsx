@@ -63,6 +63,7 @@ const Layout: React.FC<{ subpage?: boolean }> = ({ children, subpage }) => {
           <TopNav subpage={subpage} />
           <MobileMenu />
           <RocketJump />
+          {subpage && <div style={{ height: "70px" }} />}
           {children}
           <Footer />
         </Container>

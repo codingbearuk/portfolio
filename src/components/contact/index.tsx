@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { SyntheticEvent, useCallback, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { FaAddressCard, FaAt, FaBookmark, FaEnvelope } from "react-icons/fa";
 
@@ -51,7 +51,7 @@ const Contact: React.FC = (p) => {
     },
   ];
 
-  const handleButton = useCallback((e: Event) => {
+  const handleButton = useCallback((e: SyntheticEvent) => {
     e.preventDefault();
     setLoading(true);
   }, []);
