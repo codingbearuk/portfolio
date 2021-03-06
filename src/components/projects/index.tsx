@@ -24,8 +24,6 @@ const Projects: React.FC<ProjectsInterface> = (p) => {
     new Date(a.node.date) > new Date(b.node.date) ? -1 : 1
   );
 
-  console.log(projects);
-
   return View({ projects });
 };
 

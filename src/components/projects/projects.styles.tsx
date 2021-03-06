@@ -24,8 +24,10 @@ export const ProjectContainer = styled.div`
   grid-template-columns: 33.333% 33.333% 33.333%;
   width: 100%;
   padding: 60px 10%;
+  grid-row-gap: 50px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
     grid-template-columns: 100%;
+    padding: 60px 5%;
   }
 `;
