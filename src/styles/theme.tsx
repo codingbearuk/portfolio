@@ -27,7 +27,6 @@ const theme = {
   },
   py: (value: number | string) =>
     `padding-top: ${value}; padding-bottom: ${value};`,
-  // Add anything else you'd like.
 };
 
 export type Theme = typeof theme;

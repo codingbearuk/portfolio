@@ -58,16 +58,3 @@ const Projects: FC<ProjectInterface> = (p) => {
 };
 
 export default Projects;
-
-// query MyQuery {
-//   strapiProjects(Title: {eq: "My Weekend Pizza"}) {
-//     id
-//     Title
-//     content
-//     created_at
-//     mainPictrue {
-//       publicURL
-//     }
-//     strapiId
-//   }
-// }
