@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
-import { FaBookReader } from "react-icons/fa";
+import { FaBookReader, FaCalendar } from "react-icons/fa";
+import moment from "moment";
 
-import { Container, Latest, Post, Button, PostWrapper } from "./blog.styles";
+import {
+  Container,
+  Latest,
+  Post,
+  Button,
+  PostWrapper,
+  DateBox,
+} from "./blog.styles";
 import { PostInterface } from "../../pages/blog";
 
 const ReadBtn: React.FC<{ link: string; center?: boolean }> = ({
@@ -52,6 +59,10 @@ const View: React.FC<ViewInterface> = (p) => {
                     {post.introduction.split(" ").slice(0, 30).join(" ")}...
                   </p>
                   <ReadBtn center link={`/${post.id}`} />
+                  <DateBox>
+                    <FaCalendar />
+                    {moment(new Date(post.published_at)).format("ll")}
+                  </DateBox>
                 </Post>
               );
           })}

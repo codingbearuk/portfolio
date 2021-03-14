@@ -103,3 +103,13 @@ export const Post = styled.article`
     margin-bottom: 20px;
   }
 `;
+
+export const DateBox = styled.section`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: ${({ theme }) => theme.colors.white};
+  svg {
+    margin-right: 5px;
+  }
+`;
