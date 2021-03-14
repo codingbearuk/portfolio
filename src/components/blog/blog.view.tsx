@@ -17,11 +17,11 @@ const ReadBtn: React.FC<{ link: string; center?: boolean }> = ({
       justifyContent: center ? "center" : "flex-end",
     }}
   >
-    <Link to={link}>
+    <a href={link}>
       <Button>
         <FaBookReader /> read this post
       </Button>
-    </Link>
+    </a>
   </span>
 );
 
@@ -37,7 +37,7 @@ const View: React.FC<ViewInterface> = (p) => {
           <section>
             <h2>{p.posts[0].title}</h2>
             <p>{p.posts[0].introduction}</p>
-            <ReadBtn link={`/blog/${p.posts[0].id}`} />
+            <ReadBtn link={`/${p.posts[0].id}`} />
           </section>
         </Latest>
         <div>
@@ -51,7 +51,7 @@ const View: React.FC<ViewInterface> = (p) => {
                   <p>
                     {post.introduction.split(" ").slice(0, 30).join(" ")}...
                   </p>
-                  <ReadBtn center link={`/blog/${post.id}`} />
+                  <ReadBtn center link={`/${post.id}`} />
                 </Post>
               );
           })}

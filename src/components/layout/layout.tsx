@@ -14,7 +14,8 @@ import screen from "../../../store/actions/screen.actions";
 
 const Container = styled.main`
   margin: 0;
-  max-width: 1080px;
+  max-width: 100vw;
+  overflow: hidden;
 `;
 
 const Layout: React.FC<{ subpage?: boolean }> = ({ children, subpage }) => {

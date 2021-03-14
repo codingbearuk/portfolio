@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*","src/components" ,"custom.d.ts"],
+  "include": ["./src/**/*","src/components" ,"custom.d.ts", "fb.d.ts", "styled.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es5",
