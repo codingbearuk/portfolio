@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import moment from "moment";
 import { FaCalendar } from "react-icons/fa";
 import { FacebookProvider, Comments } from "react-facebook";
@@ -43,18 +43,14 @@ const View: React.FC<ViewInterface> = (p) => (
       </Head>
       <Article>
         <LikeContainer>
-          <Suspense fallback={<div>...loading</div>}>
-            <Like appId={FbId} />
-          </Suspense>
+          <Like appId={FbId} />
         </LikeContainer>
         <Introduction>{p.data.introduction}</Introduction>
         <Content>{p.data.content}</Content>
         <CommentsBox>
-          <Suspense fallback={<div>...loading</div>}>
-            <FacebookProvider appId={FbId}>
-              <Comments href={`https://kamilpieczyk.github.io${p.location}`} />
-            </FacebookProvider>
-          </Suspense>
+          <FacebookProvider appId={FbId}>
+            <Comments href={`https://kamilpieczyk.github.io${p.location}`} />
+          </FacebookProvider>
         </CommentsBox>
       </Article>
     </Container>

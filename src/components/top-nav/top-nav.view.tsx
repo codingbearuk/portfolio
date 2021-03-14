@@ -21,7 +21,10 @@ const Nav: React.FC<NavType> = (p) => {
       isPageScrolled={p.state.isPageScrolled}
       isSubpage={p.state.subpage}
     >
-      <Logo src="images/logo.png" alt="kamilpieczyk logo" />
+      <Logo
+        src="https://kamilpieczyk.github.io/images/logo.png"
+        alt="kamilpieczyk logo"
+      />
       <Menu>
         {p.state.device === "desktop" ? (
           p.menu.map((El) => (
