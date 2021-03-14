@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 
 import { Layout } from "../components/layout";
+import Seo from "../components/seo";
 import ProjectsComponent from "../components/projects";
 
 export const query = graphql`
@@ -48,10 +49,7 @@ interface ProjectInterface {
 const Projects: FC<ProjectInterface> = (p) => {
   return (
     <Layout subpage>
-      <Helmet>
-        <title>Projects - Kamil Pieczyk Portfolio</title>
-        <meta name="description" content="All of my developed projects." />
-      </Helmet>
+      <Seo title="Portfolio - kamilpieczyk.github.io" />
       <ProjectsComponent projects={p.data.allStrapiProjects.edges} />
     </Layout>
   );

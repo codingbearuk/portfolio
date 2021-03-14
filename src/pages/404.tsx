@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { FaUndo } from "react-icons/fa";
 
 import { Link } from "gatsby";
+import Seo from "../components/seo";
 import { Layout } from "../components/layout";
-import { SEO } from "../components/seo";
 
 const Container = styled.div`
   display: grid;
@@ -43,7 +43,7 @@ const Container = styled.div`
 const NotFoundPage: React.FC = () => (
   <Layout subpage>
     <Container>
-      <SEO title="404: Not found" />
+      <Seo title="404 Ooops! Page not found :( - kamilpieczyk.github.io" />
       <div>
         <h1>Oops! 404</h1>
         <h3>You just hit a route that doesn&#39;t exist.</h3>

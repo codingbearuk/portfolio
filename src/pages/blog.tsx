@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
 
 import { Layout } from "../components/layout";
+import Seo from "../components/seo";
 import BlogComponent from "../components/blog";
 
 export interface PostInterface {
@@ -54,13 +54,7 @@ const Blog: React.FC<BlogInterface> = (p) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Blog - Kamil Pieczyk Portfolio</title>
-        <meta
-          name="description"
-          content="Kamil Pieczyks portfolio blog page."
-        />
-      </Helmet>
+      <Seo title="Portfolio - kamilpieczyk.github.io" />
       <BlogComponent posts={posts} />
     </Layout>
   );
