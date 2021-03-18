@@ -41,6 +41,7 @@ export const Menu = styled.div`
     margin-right: 20px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     ::before {
       content: "";
       position: absolute;

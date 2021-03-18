@@ -5,8 +5,9 @@ import gsap from "gsap";
 import View from "./mobile-menu.view";
 import { State } from "../../../store/reducers/index";
 import { mobileMenuSwitch } from "../../../store/actions/mobile-menu.actions";
+import { PageProps } from "gatsby";
 
-interface MobileMenuType {}
+interface MobileMenuType extends PageProps {}
 
 const MobileMenu: React.FC<MobileMenuType> = (p) => {
   const screenType: "mobile" | "desktop" = useSelector(
@@ -38,6 +39,11 @@ const MobileMenu: React.FC<MobileMenuType> = (p) => {
     });
   }, []);
 
+  const handleClickOption = useCallback((location: string) => {
+    dispatch(mobileMenuSwitch("off"));
+    p.navigate(location);
+  }, []);
+
   useEffect(() => {
     isMenuOpen && enterMotion();
     return () => {
@@ -45,7 +51,8 @@ const MobileMenu: React.FC<MobileMenuType> = (p) => {
     };
   }, [isMenuOpen]);
 
-  if (isMenuOpen && screenType === "mobile") return View({ containerRef });
+  if (isMenuOpen && screenType === "mobile")
+    return View({ containerRef, handleClickOption });
   else return null;
 };
 

@@ -12,6 +12,7 @@ interface NavType {
     subpage?: boolean;
   };
   menu: MenuEl[];
+  handleCloseMobileMenu: (navigate: string) => void;
 }
 
 const Nav: React.FC<NavType> = (p) => {
@@ -28,10 +29,14 @@ const Nav: React.FC<NavType> = (p) => {
       <Menu>
         {p.state.device === "desktop" ? (
           p.menu.map((El) => (
-            <Link key={El.title} title={El.title} to={El.link}>
+            <a
+              key={El.title}
+              title={El.title}
+              onClick={() => p.handleCloseMobileMenu(El.link)}
+            >
               <El.icon />
               {El.title}
-            </Link>
+            </a>
           ))
         ) : (
           <BurgerMenu />

@@ -6,6 +6,7 @@ import menu from "../top-nav/menu";
 
 interface ViewType {
   containerRef: React.Ref<HTMLElement>;
+  handleClickOption: (location: string) => void;
 }
 
 const View: React.FC<ViewType> = (p) => {
@@ -13,7 +14,7 @@ const View: React.FC<ViewType> = (p) => {
     <Container ref={p.containerRef}>
       {menu.map((El) => (
         <Link to={El.link} key={El.title}>
-          <Item>
+          <Item onClick={() => p.handleClickOption(El.link)}>
             <El.icon />
             {El.title}
           </Item>

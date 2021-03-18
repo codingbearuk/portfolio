@@ -1,9 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import menu from "./menu";
 import View from "./top-nav.view";
 import { State } from "../../../store/reducers";
+import { navigate } from "gatsby";
 
 interface NavType {
   subpage?: boolean;
@@ -15,7 +16,17 @@ const Nav: React.FC<NavType> = (p) => {
   );
   const isPageScrolled: boolean = useSelector((s: State) => s.screen.scrolled);
 
-  return View({ menu, state: { device, isPageScrolled, subpage: p.subpage } });
+  const dispatch = useDispatch();
+
+  const handleCloseMobileMenu = (navTo: string) => {
+    navigate(navTo);
+  };
+
+  return View({
+    menu,
+    handleCloseMobileMenu,
+    state: { device, isPageScrolled, subpage: p.subpage },
+  });
 };
 
 export default Nav;
