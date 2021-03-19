@@ -19,6 +19,7 @@ declare module "styled-components" {
       black: string;
       transparent: string;
       transparentDarkblue: string;
+      semiTransparentDarkblue: string;
     };
     opacity: {
       0: number;

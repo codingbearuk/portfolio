@@ -128,7 +128,6 @@ const MySkills: React.FC = (p) => {
   useEffect(() => {
     const scrollListen = () => {
       if (scrollPosition === 0) null;
-      // else if (animated && scrollPosition < sectionPosition) reverseMotion();
       else if (!animated && scrollPosition >= sectionPosition) motion();
     };
     document.addEventListener("scroll", scrollListen);

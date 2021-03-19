@@ -1,10 +1,10 @@
 import Action from "../actions/action";
 
-const initialState: boolean = false;
+const initialState: boolean = true;
 
-const mobileMenu = (state = initialState, action: Action) => {
+const pageLoading = (state = initialState, action: Action) => {
   switch (action.type) {
-    case "switch-mobile-menu":
+    case "switch-page-loading":
       const switcher: boolean = action.payload;
       state = switcher;
       return state;
@@ -13,4 +13,4 @@ const mobileMenu = (state = initialState, action: Action) => {
   }
 };
 
-export default mobileMenu;
+export default pageLoading;

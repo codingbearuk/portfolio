@@ -9,8 +9,10 @@ import TopNav from "../top-nav";
 import MobileMenu from "../mobile-menu";
 import RocketJump from "../rocket-jump";
 import Footer from "../footer";
+import LoadingScreen from "../loading-screen";
 // actions
 import screen from "../../../store/actions/screen.actions";
+import { pageLoadingSwitch } from "../../../store/actions/page-loading.action";
 
 const Container = styled.main`
   margin: 0;
@@ -55,6 +57,10 @@ const Layout: React.FC<{ subpage?: boolean }> = ({ children, subpage }) => {
     handleScrollValue();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => store.dispatch(pageLoadingSwitch("off")), 3000);
+  }, []);
+
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme()}>
@@ -64,6 +70,7 @@ const Layout: React.FC<{ subpage?: boolean }> = ({ children, subpage }) => {
           <TopNav subpage={subpage} />
           <MobileMenu />
           <RocketJump />
+          <LoadingScreen />
           {subpage && <div style={{ height: "70px" }} />}
           {children}
           <Footer />

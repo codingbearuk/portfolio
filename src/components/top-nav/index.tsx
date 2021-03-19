@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { navigate } from "gatsby";
 
 import menu from "./menu";
 import View from "./top-nav.view";
 import { State } from "../../../store/reducers";
-import { navigate } from "gatsby";
+import { pageLoadingSwitch } from "../../../store/actions/page-loading.action";
 
 interface NavType {
   subpage?: boolean;
@@ -18,13 +19,16 @@ const Nav: React.FC<NavType> = (p) => {
 
   const dispatch = useDispatch();
 
-  const handleCloseMobileMenu = (navTo: string) => {
-    navigate(navTo);
+  const handleLink = (navTo: string) => {
+    dispatch(pageLoadingSwitch("on"));
+    navigate(navTo).then(() => {
+      dispatch(pageLoadingSwitch("off"));
+    });
   };
 
   return View({
     menu,
-    handleCloseMobileMenu,
+    handleLink,
     state: { device, isPageScrolled, subpage: p.subpage },
   });
 };

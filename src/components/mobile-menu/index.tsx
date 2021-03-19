@@ -5,6 +5,7 @@ import gsap from "gsap";
 import View from "./mobile-menu.view";
 import { State } from "../../../store/reducers/index";
 import { mobileMenuSwitch } from "../../../store/actions/mobile-menu.actions";
+import { pageLoadingSwitch } from "../../../store/actions/page-loading.action";
 import { PageProps } from "gatsby";
 
 interface MobileMenuType extends PageProps {}
@@ -41,7 +42,10 @@ const MobileMenu: React.FC<MobileMenuType> = (p) => {
 
   const handleClickOption = useCallback((location: string) => {
     dispatch(mobileMenuSwitch("off"));
-    p.navigate(location);
+    dispatch(pageLoadingSwitch("on"));
+    p.navigate(location).then(() => {
+      dispatch(pageLoadingSwitch("off"));
+    });
   }, []);
 
   useEffect(() => {

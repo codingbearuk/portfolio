@@ -12,7 +12,7 @@ interface NavType {
     subpage?: boolean;
   };
   menu: MenuEl[];
-  handleCloseMobileMenu: (navigate: string) => void;
+  handleLink: (navigate: string) => void;
 }
 
 const Nav: React.FC<NavType> = (p) => {
@@ -32,7 +32,7 @@ const Nav: React.FC<NavType> = (p) => {
             <a
               key={El.title}
               title={El.title}
-              onClick={() => p.handleCloseMobileMenu(El.link)}
+              onClick={() => p.handleLink(El.link)}
             >
               <El.icon />
               {El.title}

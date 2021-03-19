@@ -14,9 +14,9 @@ const View: React.FC<ViewType> = (p) => {
     <Container id="my-skills">
       <Title>My skills 👩🏻‍💻</Title>
       <SkillsContainer>
-        {p.skills.map((skill) => (
+        {p.skills.map((skill, index) => (
           <Skill
-            key="name"
+            key={skill.title + index}
             title={skill.title}
             imagePath={skill.imagePath}
             level={skill.level}
