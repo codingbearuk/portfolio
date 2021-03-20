@@ -8,7 +8,7 @@ import { Layout } from "../components/layout";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 50%;
   min-height: 80vh;
   justify-items: center;
   place-items: center;
@@ -36,6 +36,13 @@ const Container = styled.div`
     }
     svg {
       margin-right: 8px;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
+    margin: 0 5%;
+    grid-template-columns: 100%;
+    img {
+      grid-area: 1;
     }
   }
 `;
