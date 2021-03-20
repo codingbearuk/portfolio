@@ -21,6 +21,7 @@ const Nav: React.FC<NavType> = (p) => {
       isDesktop={p.state.device === "desktop"}
       isPageScrolled={p.state.isPageScrolled}
       isSubpage={p.state.subpage}
+      id="top-navigation"
     >
       <Logo
         src="https://kamilpieczyk.github.io/images/logo.png"
