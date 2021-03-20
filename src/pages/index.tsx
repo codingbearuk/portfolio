@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import gsap from "gsap";
+import gsap, { Elastic } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Layout } from "../components/layout";
@@ -16,7 +16,8 @@ const App = () => {
     gsap.to(id, {
       opacity: 1,
       x: 0,
-      duration: 0.5,
+      duration: 0.7,
+      ease: Elastic.easeInOut,
     });
   };
   const leaveAnimation = (id: string, index: number) => {
@@ -35,12 +36,11 @@ const App = () => {
       ScrollTrigger.create({
         trigger: `#${ID}`,
         start: "top +300px",
+        end: "bottom -1000px",
         onEnter: () => enterAnimation(`#${ID}`),
         onEnterBack: () => enterAnimation(`#${ID}`),
         onLeave: () => leaveAnimation(`#${ID}`, index),
         onLeaveBack: () => leaveAnimation(`#${ID}`, index),
-        // pin: true,
-        // pinSpacing: false,
       });
     });
   }, []);
