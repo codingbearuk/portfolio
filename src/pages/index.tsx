@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-
-import { setPosition } from "../../store/actions/index-page-positions.actions";
-import store from "../../store/store";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Layout } from "../components/layout";
 import MainHeader from "../components/main-header";
@@ -11,22 +10,52 @@ import Separatorbar from "../components/separator-bar";
 import Seo from "../components/seo";
 
 const App = () => {
-  const setSectionsPosition = () => {
-    const whoiam: any = document.querySelector("#who-i-am");
-    const myskills: any = document.querySelector("#my-skills");
-    store.dispatch(setPosition("set-who-i-am-position", whoiam.offsetTop));
-    store.dispatch(setPosition("set-my-skills-position", myskills.offsetTop));
+  const IDs: string[] = ["whoIam", "mySkills"];
+
+  const enterAnimation = (id: string) => {
+    gsap.to(id, {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+    });
+  };
+  const leaveAnimation = (id: string, index: number) => {
+    gsap.to(id, {
+      opacity: 0,
+      x: index === 0 ? -1500 : 1500,
+      duration: 0.4,
+    });
   };
 
-  useEffect(setSectionsPosition, []);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    IDs.forEach((ID, index) => {
+      gsap.set(`#${ID}`, { opacity: 0, x: index === 0 ? -1500 : 1500 });
+
+      ScrollTrigger.create({
+        trigger: `#${ID}`,
+        start: "top +300px",
+        onEnter: () => enterAnimation(`#${ID}`),
+        onEnterBack: () => enterAnimation(`#${ID}`),
+        onLeave: () => leaveAnimation(`#${ID}`, index),
+        onLeaveBack: () => leaveAnimation(`#${ID}`, index),
+        // pin: true,
+        // pinSpacing: false,
+      });
+    });
+  }, []);
 
   return (
     <Layout>
       <Seo />
       <MainHeader />
-      <WhoIAm />
-      <Separatorbar />
-      <MySkills />
+      <div id={IDs[0]}>
+        <WhoIAm />
+      </div>
+      <div id={IDs[1]}>
+        <Separatorbar />
+        <MySkills />
+      </div>
     </Layout>
   );
 };

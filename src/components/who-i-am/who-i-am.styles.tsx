@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding: 30px 15%;
+  padding: 80px 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  opacity: 0;
+  background: ${({ theme }) => theme.colors.white};
+  /* opacity: 0; */
   @media (max-width: ${({ theme }) => theme.breakpoints[1]}px) {
     padding: 30px 5%;
   }
