@@ -11,16 +11,20 @@ import {
   Photo,
 } from "./contact.style";
 import { InputType } from "./";
+import Popup from "./popup";
 
 interface ContactType {
   inputs: InputType[];
   isLoading: boolean;
+  host: string;
+  isMessage: boolean;
+  handleClosePopup: () => void;
   handleButton: (e: SyntheticEvent) => void;
 }
 
 const Contact: React.FC<ContactType> = (p) => {
   return (
-    <Container>
+    <Container host={p.host}>
       <ContentContainer>
         <h1>
           Contact to <span>Kamil</span> <FaPaperPlane />
@@ -69,6 +73,7 @@ const Contact: React.FC<ContactType> = (p) => {
           </DetaildContainer>
         </section>
       </ContentContainer>
+      {p.isMessage && <Popup close={p.handleClosePopup} />}
     </Container>
   );
 };

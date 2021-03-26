@@ -1,3 +1,4 @@
+import { PageProps } from "gatsby";
 import React, { SyntheticEvent, useCallback, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { FaAddressCard, FaAt, FaBookmark, FaEnvelope } from "react-icons/fa";
@@ -8,17 +9,18 @@ export interface InputType {
   name: "name" | "email" | "subject" | "message";
   title: string;
   type: "text" | "textarea";
-  ref: React.Ref<any>;
+  ref: { current: any };
   icon: IconType;
 }
 
-const Contact: React.FC = (p) => {
+const Contact: React.FC<{ host: string }> = (p) => {
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [isMessage, setMessage] = useState<boolean>(false);
 
-  const nameRef: React.Ref<HTMLInputElement> = useRef(null);
-  const emailRef: React.Ref<HTMLInputElement> = useRef(null);
-  const subjectRef: React.Ref<HTMLInputElement> = useRef(null);
-  const messageRef: React.Ref<HTMLTextAreaElement> = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const subjectRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const inputs: InputType[] = [
     {
@@ -51,12 +53,52 @@ const Contact: React.FC = (p) => {
     },
   ];
 
-  const handleButton = useCallback((e: SyntheticEvent) => {
+  const handleClosePopup = () => {
+    setMessage(false);
+  };
+
+  const handleButton = useCallback(async (e: SyntheticEvent): Promise<void> => {
     e.preventDefault();
     setLoading(true);
+    const url: string = "http://vps688103.ovh.net:3000/contact";
+    // const url: string = "http://localhost:3000/contact";
+    const body = {
+      from: "",
+      name: "",
+      subject: "",
+      message: "",
+    };
+
+    inputs.forEach((input) => {
+      if (input.name === "email") body.from = input.ref.current.value;
+      else if (input.name === "name") body.name = input.ref.current.value;
+      else if (input.name === "subject") body.subject = input.ref.current.value;
+      else if (input.name === "message") body.message = input.ref.current.value;
+    });
+
+    let data: any = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (data.status === 200) {
+      setLoading(false);
+      setMessage(true);
+    }
   }, []);
 
-  return View({ inputs, handleButton, isLoading });
+  return View({
+    inputs,
+    handleButton,
+    isLoading,
+    host: p.host,
+    isMessage,
+    handleClosePopup,
+  });
 };
 
 export default Contact;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.section<{ host: string }>`
   padding-top: 80px;
   width: 100vw;
   height: 100vh;
-  background-image: url(images/background.png);
+  background-image: ${({ host }) => `url(${host}/images/background.png)`};
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -52,11 +52,13 @@ export const InputBox = styled.div<{ textarea?: boolean }>`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
   margin-bottom: 10px;
+
   svg {
     color: ${({ theme }) => theme.colors.darkblue};
     margin-left: 5px;
     margin-top: 5px;
   }
+
   input,
   textarea {
     background: none;
@@ -67,6 +69,7 @@ export const InputBox = styled.div<{ textarea?: boolean }>`
     text-align: center;
     width: 100%;
   }
+
   textarea {
     height: 200px;
     width: 100%;
@@ -74,6 +77,25 @@ export const InputBox = styled.div<{ textarea?: boolean }>`
     ::-webkit-scrollbar {
       width: 5px;
     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    background: none;
+    border: none;
+    outline: none;
+    caret-color: ${({ theme }) => theme.colors.darkblue};
+    color: ${({ theme }) => theme.colors.darkblue};
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
   }
 `;
 
