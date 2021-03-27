@@ -60,7 +60,7 @@ const Contact: React.FC<{ host: string }> = (p) => {
   const handleButton = useCallback(async (e: SyntheticEvent): Promise<void> => {
     e.preventDefault();
     setLoading(true);
-    const url: string = "http://vps688103.ovh.net:3000/contact";
+    const url: string = "https://kamilpieczyk.tk/contact";
     // const url: string = "http://localhost:3000/contact";
     const body = {
       from: "",
